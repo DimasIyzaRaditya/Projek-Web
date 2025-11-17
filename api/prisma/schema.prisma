@@ -13,18 +13,31 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
 model User {
-  id        Int          @id @default(autoincrement())
-  name      String
-  username  String       @unique
-  password  String
+  id          Int           @id @default(autoincrement())
+  name        String
+  email       String        @unique
+  password    String
+  transaksi   Transaksi[]
 }
 
-
 model Produk {
-  id        Int          @id @default(autoincrement())
-  nama      String
-  harga     Int
-  stok      Int
+  id          Int           @id @default(autoincrement())
+  nama        String
+  harga       Int
+  stok        Int
+  transaksi   Transaksi[]
+}
+
+model Transaksi {
+  id          Int           @id @default(autoincrement())
+  user        User          @relation(fields: [userId], references: [id])
+  userId      Int
+
+  produk      Produk        @relation(fields: [produkId], references: [id])
+  produkId    Int
+
+  jumlah      Int
+  totalHarga  Int
+  createdAt   DateTime      @default(now())
 }
