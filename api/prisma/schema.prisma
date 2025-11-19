@@ -25,7 +25,6 @@ model Produk {
   id          Int           @id @default(autoincrement())
   nama        String
   harga       Int
-  stok        Int
   transaksi   Transaksi[]
 }
 
