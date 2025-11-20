@@ -95,5 +95,7 @@ export async function DELETE(
     });
 
     return NextResponse.json(
+      { message: 'User deleted successfully' }
+      { status: 200 }
     );
 }
