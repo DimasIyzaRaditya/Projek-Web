@@ -74,6 +74,8 @@ export async function PUT(
     if (totalHarga !== undefined) {
       if (typeof totalHarga !== 'number' || totalHarga < 0) {
         return NextResponse.json(
+          { error: 'totalHarga must be a positive number' },
+          { status: 400 }
         );
       }
       updateData.totalHarga = totalHarga;
