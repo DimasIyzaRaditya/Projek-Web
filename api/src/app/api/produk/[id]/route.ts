@@ -51,5 +51,9 @@ export async function PUT(
     const { nama, harga } = body;
 
     const updateData: { nama?: string; harga?: number } = {};
+    if (nama) updateData.nama = nama;
+    if (harga !== undefined) {
+      updateData.harga = harga;
+    }
 }
 
