@@ -72,6 +72,10 @@ export async function PUT(
     }
 
     if (totalHarga !== undefined) {
+      if (typeof totalHarga !== 'number' || totalHarga < 0) {
+        return NextResponse.json(
+        );
+      }
       updateData.totalHarga = totalHarga;
     }
 }
