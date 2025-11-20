@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
         name,
         username,
         password, // Note: Hash password in production!
-      }
+      },
       select: {
         id: true,
         name: true,
