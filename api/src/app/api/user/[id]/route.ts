@@ -58,6 +58,7 @@ export async function PUT(
       select: {
         id: true,
         name: true
+        username: true
       },
     });
 }
