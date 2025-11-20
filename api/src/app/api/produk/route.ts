@@ -20,7 +20,6 @@ export async function GET() {
 
 // POST create new produk
 export async function POST(request: NextRequest) {
-  try {
     const body = await request.json();
     const { nama, harga } = body;
 
@@ -30,5 +29,10 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-  }
+    if (typeof harga !== 'number' || harga < 0) {
+      return NextResponse.json(
+        { error: 'Harga must be a positive number' },
+        { status: 400 }
+      );
+    }
 }
