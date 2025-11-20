@@ -11,6 +11,7 @@ export async function GET(
       where: { id: parseInt(id) },
       select: {
         id: true
+        name: true
       },
     });
 }
