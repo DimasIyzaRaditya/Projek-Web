@@ -61,5 +61,10 @@ export async function PUT(
       }
       updateData.harga = harga;
     }
+
+    const produk = await prisma.produk.update({
+      where: { id: parseInt(id) },
+      data: updateData,
+    });
 }
 
