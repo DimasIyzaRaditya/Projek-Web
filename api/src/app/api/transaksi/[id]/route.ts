@@ -51,6 +51,10 @@ export async function PUT(
     
     if (userId) {
       const user = await prisma.user.findUnique({ where: { id: userId } });
+      if (!user) {
+        return NextResponse.json(
+        );
+      }
       updateData.userId = userId;
     }
 }
