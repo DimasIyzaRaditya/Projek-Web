@@ -7,6 +7,7 @@ export async function GET() {
       select: {
         id: true,
         name: true
+        username: true,
         // password tidak di-include untuk keamanan
       },
     });
