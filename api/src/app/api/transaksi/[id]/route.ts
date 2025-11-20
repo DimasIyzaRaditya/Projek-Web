@@ -46,4 +46,6 @@ export async function PUT(
     const { id } = await params;
     const body = await request.json();
     const { userId, produkId, totalHarga } = body;
+
+    const updateData: any = {};
 }
