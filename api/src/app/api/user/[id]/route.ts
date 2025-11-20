@@ -113,7 +113,7 @@ export async function DELETE(
       );
     }
     return NextResponse.json(
-      { error: 'Failed to delete user' }
+      { error: 'Failed to delete user' },
       { status: 500 }
     );
   }
