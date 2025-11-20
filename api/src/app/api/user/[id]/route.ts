@@ -43,6 +43,7 @@ export async function PUT(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  try {
     const { id } = await params;
     const body = await request.json();
     const { name, username, password } = body;
@@ -58,7 +59,10 @@ export async function PUT(
       select: {
         id: true,
         name: true,
-        username: true
+        username: true,
       },
     });
+
+  } catch (error: any) {
+  }
 }
