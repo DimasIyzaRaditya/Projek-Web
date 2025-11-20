@@ -18,3 +18,7 @@ export async function GET() {
   }
 }
 
+// POST create new produk
+export async function POST(request: NextRequest) {
+
+}
