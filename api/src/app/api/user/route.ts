@@ -25,4 +25,10 @@ export async function GET() {
 export async function POST(request: NextRequest) {
     const body = await request.json();
     const { name, username, password } = body;
+
+    if (!name || !username || !password) {
+      return NextResponse.json(
+      );
+    }
+
 }
