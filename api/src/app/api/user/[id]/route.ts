@@ -57,7 +57,7 @@ export async function PUT(
       data: updateData,
       select: {
         id: true,
-
+        name: true
       },
     });
 }
