@@ -49,5 +49,5 @@ export async function PUT(
 
     const updateData: any = {};
     if (name) updateData.name = name;
-
+    if (username) updateData.username = username;
 }
