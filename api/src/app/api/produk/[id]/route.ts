@@ -95,7 +95,7 @@ export async function DELETE(
     });
 
     return NextResponse.json(
-      { message: 'Produk deleted successfully' }
+      { message: 'Produk deleted successfully' },
       { status: 200 }
     );
 }
