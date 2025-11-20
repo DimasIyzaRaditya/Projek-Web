@@ -20,6 +20,7 @@ export async function GET() {
 
 // POST create new produk
 export async function POST(request: NextRequest) {
+  try {
     const body = await request.json();
     const { nama, harga } = body;
 
@@ -29,16 +30,26 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-        if (typeof harga !== 'number' || harga < 0) {
+
+    if (typeof harga !== 'number' || harga < 0) {
       return NextResponse.json(
         { error: 'Harga must be a positive number' },
         { status: 400 }
       );
     }
-        const produk = await prisma.produk.create({
+
+    const produk = await prisma.produk.create({
       data: {
         nama,
         harga,
       },
     });
+
+    return NextResponse.json(produk, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Failed to create produk' },
+      { status: 500 }
+    );
+  }
 }
