@@ -111,5 +111,9 @@ export async function PUT(
         { status: 400 }
       );
     }
+    return NextResponse.json(
+      { error: 'Failed to update transaksi' },
+      { status: 500 }
+    );
   }
 }
