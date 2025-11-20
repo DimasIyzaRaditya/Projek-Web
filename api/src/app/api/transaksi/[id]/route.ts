@@ -134,5 +134,9 @@ export async function DELETE(
       { status: 200 }
     );
   } catch (error: any) {
+    if (error.code === 'P2025') {
+      return NextResponse.json(
+      );
+    }
   }
 }
