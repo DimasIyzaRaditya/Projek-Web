@@ -113,5 +113,7 @@ export async function DELETE(
         { status: 409 }
       );
     }
+    return NextResponse.json(
+    );
   }
 }
