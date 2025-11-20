@@ -101,6 +101,8 @@ export async function PUT(
   } catch (error: any) {
     if (error.code === 'P2025') {
       return NextResponse.json(
+        { error: 'Transaksi not found' },
+        { status: 404 }
       );
     }
   }
