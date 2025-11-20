@@ -107,6 +107,8 @@ export async function PUT(
     }
     if (error.code === 'P2003') {
       return NextResponse.json(
+        { error: 'Invalid userId or produkId' },
+        { status: 400 }
       );
     }
   }
