@@ -107,5 +107,9 @@ export async function DELETE(
         { status: 404 }
       );
     }
+    if (err.code === 'P2003') {
+      return NextResponse.json(
+      );
+    }
   }
 }
