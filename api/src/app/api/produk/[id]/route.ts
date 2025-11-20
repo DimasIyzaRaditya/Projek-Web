@@ -114,6 +114,8 @@ export async function DELETE(
       );
     }
     return NextResponse.json(
+      { error: 'Failed to delete produk' }
+      { status: 500 }
     );
   }
 }
