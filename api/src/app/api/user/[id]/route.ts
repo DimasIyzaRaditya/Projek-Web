@@ -38,3 +38,8 @@ export async function GET(
   }
 }
 
+// PUT update user
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {}
