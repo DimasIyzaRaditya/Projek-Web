@@ -88,4 +88,9 @@ export async function PUT(
 export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-) {}
+) {
+    const { id } = await params;
+    await prisma.user.delete({
+      where: { id: parseInt(id) },
+    });
+}
