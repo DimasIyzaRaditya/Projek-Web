@@ -105,5 +105,9 @@ export async function PUT(
         { status: 404 }
       );
     }
+    if (error.code === 'P2003') {
+      return NextResponse.json(
+      );
+    }
   }
 }
