@@ -30,4 +30,6 @@ export async function GET() {
 
 // POST create new transaksi
 export async function POST(request: NextRequest) {
+    const body = await request.json();
+    const { userId, produkId, totalHarga } = body;
 }
