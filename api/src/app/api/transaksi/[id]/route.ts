@@ -99,5 +99,9 @@ export async function PUT(
 
     return NextResponse.json({ data: transaksi });
   } catch (error: any) {
+    if (error.code === 'P2025') {
+      return NextResponse.json(
+      );
+    }
   }
 }
