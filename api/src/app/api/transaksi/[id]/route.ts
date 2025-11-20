@@ -127,4 +127,8 @@ export async function DELETE(
     await prisma.transaksi.delete({
       where: { id: parseInt(id) },
     });
+
+    return NextResponse.json(
+
+    );
 }
