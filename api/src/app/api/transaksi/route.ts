@@ -46,10 +46,14 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-        // Verify user and produk exist
+
+    // Verify user and produk exist
     const [user, produk] = await Promise.all([
       prisma.user.findUnique({ where: { id: userId } }),
       prisma.produk.findUnique({ where: { id: produkId } }),
     ]);
 
+    if (!user) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
 }
