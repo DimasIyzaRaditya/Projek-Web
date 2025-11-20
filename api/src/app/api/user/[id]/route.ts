@@ -51,4 +51,6 @@ export async function PUT(
     if (name) updateData.name = name;
     if (username) updateData.username = username;
     if (password) updateData.password = password;
+
+    const user = await prisma.user.update({});
 }
