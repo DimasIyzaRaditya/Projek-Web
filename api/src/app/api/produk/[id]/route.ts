@@ -53,6 +53,10 @@ export async function PUT(
     const updateData: { nama?: string; harga?: number } = {};
     if (nama) updateData.nama = nama;
     if (harga !== undefined) {
+      if (typeof harga !== 'number' || harga < 0) {
+        return NextResponse.json(
+        );
+      }
       updateData.harga = harga;
     }
 }
