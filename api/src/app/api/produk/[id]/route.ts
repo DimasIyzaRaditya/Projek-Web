@@ -46,6 +46,7 @@ export async function PUT(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  try {
     const { id } = await params;
     const body = await request.json();
     const { nama, harga } = body;
@@ -66,5 +67,9 @@ export async function PUT(
       where: { id: parseInt(id) },
       data: updateData,
     });
+
+    return NextResponse.json({ data: produk });
+  } catch (error: unknown) {
+  }
 }
 
