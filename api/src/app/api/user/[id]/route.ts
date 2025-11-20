@@ -71,5 +71,7 @@ export async function PUT(
         { status: 404 }
       );
     }
+    if (error.code) {
+      return NextResponse.json(
   }
 }
