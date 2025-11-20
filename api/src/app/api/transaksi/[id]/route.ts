@@ -117,3 +117,9 @@ export async function PUT(
     );
   }
 }
+
+// DELETE transaksi
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {}
