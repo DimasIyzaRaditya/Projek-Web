@@ -103,7 +103,7 @@ export async function DELETE(
     const err = error as { code?: string };
     if (err.code === 'P2025') {
       return NextResponse.json(
-        { error: 'Produk not found' }
+        { error: 'Produk not found' },
         { status: 404 }
       );
     }
