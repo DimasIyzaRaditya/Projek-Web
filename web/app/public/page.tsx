@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { API_PRODUK } from '@/lib/api';
 
 interface Produk {
   id: number;
@@ -23,7 +24,7 @@ export default function PublicPage() {
   const fetchProduk = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3000/api/produk', {
+      const response = await fetch(API_PRODUK, {
         cache: 'no-store',
       });
       if (!response.ok) {
