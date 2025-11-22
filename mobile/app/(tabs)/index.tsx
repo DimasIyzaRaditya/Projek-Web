@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, FlatList, ActivityIndicator, RefreshControl } f
 import { useEffect, useState } from 'react';
 import { ThemedView } from '@/components/themed-view';
 import { ThemedText } from '@/components/themed-text';
+import { API_PRODUK } from '@/scripts/api';
 
 interface Produk {
   id: number;
@@ -24,7 +25,7 @@ export default function ProductsScreen() {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch('http://localhost:3000/api/produk', {
+      const response = await fetch(API_PRODUK, {
         cache: 'no-store' as RequestCache,
       });
       if (!response.ok) {
